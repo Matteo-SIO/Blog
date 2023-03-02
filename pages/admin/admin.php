@@ -18,7 +18,7 @@ if (!$role || !$role->getCanAdministrate()) {
 $header = new Header();
 $header->setTitle("Administration");
 $header->setDescription("Seulement pour les lapins les plus talentueux !");
-$header->addCss('../../assets/css/style.css');
+$header->addCss('../assets/css/style.css');
 $header->render();
 
 ?>

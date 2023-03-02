@@ -13,7 +13,7 @@ if (!$role || !$role->getCanwrite()) {
 $header = new Header();
 $header->setTitle("Rédaction");
 $header->setDescription("Chaque lapin a quelque chose à réconter !");
-$header->addCss('../../assets/css/style.css');
+$header->addCss('../assets/css/style.css');
 $header->render();
 
 ?>

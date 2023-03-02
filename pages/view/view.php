@@ -14,7 +14,7 @@ if (!$article) {
 
 $header = new Header();
 $header->setTitle('Article');
-$header->addCss('../../assets/css/style.css');
+$header->addCss('../assets/css/style.css');
 $header->render();
 
 ?>
@@ -102,17 +102,17 @@ if (isLogged()) {
     <?php
     if (isLogged()) {
     ?>
-    <div class="block" id="view-comments-form">
-        <form method="post" action="<?php echo url('view/process_comment.php'); ?>">
-            <input type="hidden" name="article_id" value="<?php echo $article->getId(); ?>">
-            <div class="blockMember">
-                <textarea name="content" placeholder="Votre commentaire" required></textarea>
-            </div>
-            <div class="blockMember">
-                <input type="submit" value="Commenter">
-            </div>
-        </form>
-    </div>
+        <div class="block" id="view-comments-form">
+            <form method="post" action="<?php echo url('view/process_comment.php'); ?>">
+                <input type="hidden" name="article_id" value="<?php echo $article->getId(); ?>">
+                <div class="blockMember">
+                    <textarea name="content" placeholder="Votre commentaire" required></textarea>
+                </div>
+                <div class="blockMember">
+                    <input type="submit" value="Commenter">
+                </div>
+            </form>
+        </div>
     <?php
     }
     ?>

@@ -7,7 +7,7 @@ require '../api/mainloader.php';
 $header = new Header();
 $header->setTitle(TITLE);
 $header->setDescription(DESCRIPTION);
-$header->addCss('../assets/css/style.css');
+$header->addCss('./assets/css/style.css');
 $header->render();
 ?>
 
