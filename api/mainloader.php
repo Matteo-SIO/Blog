@@ -5,7 +5,7 @@ require __DIR__ .'/../vendor/autoload.php';
 require_once __DIR__ .'/../generated-conf/config.php';
 
 // static variables
-require ('../config/global.php');
+require __DIR__ .'../../config/global.php';
 
 // dynamically load all API files
 $files = glob( __DIR__ .'/*.php');
