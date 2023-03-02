@@ -20,13 +20,13 @@
 # Content of the project:
 * ``/pages/index.php``: root page (listing recent posts)
 * ``/pages/admin.php``: admin page (can manage roles and users)
-## Authentication:
+### Authentication:
 * ``/pages/login/register.php``: create new account and connect to it
 * ``/pages/login/login.php``: connect to existent account
 * ``/pages/login/logout.php``: destroy session
-## Publishing:
+### Publishing:
 * ``/pages/publisher/publisher.php``: create new post
-## Reading:
+### Reading:
 * ``/pages/view/view.php``: read a post (with comments, can moderate if moderator)
 
 # Maintenance:
