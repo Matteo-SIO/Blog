@@ -1,0 +1,69 @@
+<database name="default" defaultIdMethod="native"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd"
+          namespace="Blog"
+>
+
+    <!--
+    <foreign-key foreignTable="destTable" phpName="destTablePhp" refPhpName="sourceTablePhp">
+        <reference local="sourceKey" foreign="destKey"/>
+    </foreign-key>
+    -->
+
+    <table name="users" phpName="User">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="email" type="varchar" size="128" required="true"/>
+        <column name="password" type="varchar" size="128" required="true"/>
+        <column name="display" type="varchar" size="128" required="true"/>
+
+        <!-- role link -->
+        <column name="role_id" type="integer"/>
+        <foreign-key foreignTable="roles" phpName="RolesObj">
+            <reference local="role_id" foreign="id"/>
+        </foreign-key>
+
+        <column name="created_at" type="timestamp" required="true"/>
+    </table>
+
+    <table name="roles" phpName="Role">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="display" type="varchar" size="128" required="true" defaultValue="false"/>
+        <column name="canModerate" type="boolean" required="true" defaultValue="false"/>
+        <column name="canWrite" type="boolean" required="true" defaultValue="false"/>
+        <column name="canAdministrate" type="boolean" required="true" defaultValue="false"/>
+    </table>
+
+    <table name="articles" phpName="Article">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="createdAt" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP" />
+
+        <!-- publisher link -->
+        <column name="publisher_id" type="integer"/>
+        <foreign-key foreignTable="users" phpName="PublisherObj">
+            <reference local="publisher_id" foreign="id"/>
+        </foreign-key>
+
+        <column name="title" type="varchar" size="512" required="true"/>
+        <column name="content" type="longvarchar" size="32700" required="true"/>
+    </table>
+
+    <table name="comments" phpName="Comment">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true"/>
+        <column name="createdAt" type="TIMESTAMP" defaultExpr="CURRENT_TIMESTAMP" />
+
+        <!-- publisher link -->
+        <column name="publisher_id" type="integer" primaryKey="true"/>
+        <foreign-key foreignTable="users" phpName="PublisherObj">
+            <reference local="publisher_id" foreign="id"/>
+        </foreign-key>
+
+        <!-- article link -->
+        <column name="article_id" type="integer" primaryKey="true"/>
+        <foreign-key foreignTable="articles" phpName="ArticleObj">
+            <reference local="article_id" foreign="id"/>
+        </foreign-key>
+
+        <column name="content" type="longvarchar" size="32700" required="true"/>
+    </table>
+
+</database>
