@@ -5,18 +5,17 @@
 * ``cd`` into the project directory
 * execute ``php ./composer.phar install``
 
-## Configuration:
+## Database:
 * modify database credentials in ``propel.php``
 * execute ``./vendor/bin/propel config:convert`` to update the configuration
-
-## Database:
 * execute ``./vendor/bin/propel model:build`` to build the model files
 * execute ``./vendor/bin/propel sql:build`` to build the sql files
 * execute ``./vendor/bin/propel sql:insert`` to insert the sql files into the database
 
-## Create admin user:
-* Modify ``adminInstall.php`` with your desired username and password
-* execute ``php ./adminInstall.php``
+## Configuration:
+* modify ``/config/global.php`` with your desired configuration
+* modify ``/config/install.php`` with your desired admin user credentials
+* execute ``php ./config/install.php`` to create roles and the admin user
 
 # Content of the project:
 * ``/pages/index.php``: root page (listing recent posts)
@@ -33,6 +32,7 @@
 # Maintenance:
 * on change of ``schema.xml``, do 'database' steps above
 * Read propel2 documentation for more information about ORM
+* Require ``./api/mainLoader.php`` to load ORM and all API files
 
 # Usage:
 * The root page is in ``/pages/``

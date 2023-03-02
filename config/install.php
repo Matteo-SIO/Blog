@@ -1,11 +1,5 @@
 <?php
 
-use Blog\Role;
-use Blog\User;
-use Blog\UserQuery;
-
-require '../api/mainloader.php';
-
 /* MODIFY HERE ONLY */
 const ADMIN_EMAIL = 'admin@company.com';
 const ADMIN_DISPLAY = 'Admin';
@@ -15,6 +9,18 @@ const ROLE_DISPLAY_ADMIN = 'Admin';
 const ROLE_DISPLAY_MODERATOR = 'Modérateur';
 const ROLE_DISPLAY_WRITER = 'Rédacteur';
 /* MODIFY HERE ONLY */
+
+
+/* Danger zone */
+if (php_sapi_name() !== 'cli')  {
+    die('This script can only be run from the command line');
+}
+
+use Blog\Role;
+use Blog\User;
+use Blog\UserQuery;
+
+require '../api/mainloader.php';
 
 $adminRole = new Role();
 $adminRole->setDisplay(ROLE_DISPLAY_ADMIN);
