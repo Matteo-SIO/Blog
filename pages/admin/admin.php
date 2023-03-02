@@ -1,11 +1,11 @@
 <?php
 
 use Blog\RoleQuery;
-use Blog\User;
 use Blog\UserQuery;
 
 require '../../api/mainloader.php';
 
+// Require logged admin user
 requireSession();
 $user = getUser();
 $role = $user->getRolesObj();
@@ -14,15 +14,12 @@ if (!$role || !$role->getCanAdministrate()) {
     exit('NOT_ALLOWED');
 }
 
-
+// Render header
 $header = new Header();
 $header->setTitle("Administration");
 $header->setDescription("Seulement pour les lapins les plus talentueux !");
 $header->addCss('../../assets/css/style.css');
 $header->render();
-
-// show list of users with their roles, and a button to edit their roles, or delete users
-// show list of roles with their permissions, and a button to edit their permissions, or delete roles
 
 ?>
 
