@@ -98,6 +98,10 @@ if (isLogged()) {
         }
         ?>
     </div>
+
+    <?php
+    if (isLogged()) {
+    ?>
     <div class="block" id="view-comments-form">
         <form method="post" action="<?php echo url('view/process_comment.php'); ?>">
             <input type="hidden" name="article_id" value="<?php echo $article->getId(); ?>">
@@ -109,6 +113,9 @@ if (isLogged()) {
             </div>
         </form>
     </div>
+    <?php
+    }
+    ?>
 </div>
 
 
