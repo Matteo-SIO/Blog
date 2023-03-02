@@ -30,7 +30,7 @@
 * ``/pages/view/view.php``: read a post (with comments, can moderate if moderator)
 
 # Maintenance:
-* on change of ``schema.xml``, do 'database' steps above
+* on change of ``/config/schema.xml``, do 'database' steps above
 * Read propel2 documentation for more information about ORM
 * Require ``./api/mainLoader.php`` to load ORM and all API files
 
