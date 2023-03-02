@@ -9,6 +9,7 @@ if (isLogged()) {
 $header = new Header();
 $header->setTitle("Authentication");
 $header->setDescription("Pouvoir grignoter des carottes tous ensemble !");
+$header->addCss('../assets/css/authStyle.css');
 $header->addCss('../assets/css/style.css');
 $header->render();
 

@@ -59,12 +59,12 @@ class Header {
         }
 
         echo "
-        <header id='header'>
-            <div id='header-content'>
+        <header id='header' class='boxed transparent-rounded'>
+            <div id='header-content' class='boxed'>
                 <h1>{$this->title}</h1>
                 <h2>{$this->description}</h2>
             </div>
-            <div id='header-menu'>
+            <div id='header-menu' class='boxed'>
                 {$ariane}
                 {$accountMessage}
             </div>

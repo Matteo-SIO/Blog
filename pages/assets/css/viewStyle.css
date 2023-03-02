@@ -1,0 +1,28 @@
+/*#viewTitle-block {
+    background: cyan;
+}*/
+
+#view-block {
+    background: lightskyblue;
+}
+
+#view-remove {
+    background: indianred;
+    margin: 1em 45%;
+    padding: 0.1em;
+}
+
+#view-comments {
+    background: lightgrey;
+}
+
+.comment {
+    background: lightyellow;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#viewTitle-block > h3 {
+    /* underline */
+    text-decoration: underline;
+}

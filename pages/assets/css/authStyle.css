@@ -1,0 +1,11 @@
+#login-block {
+    background: palevioletred;
+}
+
+#register-block {
+    background: aquamarine;
+}
+
+.submit-block {
+    margin: 0.5%
+}

@@ -15,6 +15,7 @@ if (!$article) {
 $header = new Header();
 $header->setTitle('Article');
 $header->addCss('../assets/css/style.css');
+$header->addCss('../assets/css/viewStyle.css');
 $header->render();
 
 ?>
@@ -34,8 +35,7 @@ if (isLogged()) {
     $user = getUser();
     $role = $user->getRolesObj();
     if ($role && $role->getCanModerate()) {
-
-        ?>
+    ?>
         <div class="block boxed" id="view-remove">
             <div class="blockMember">
                 <form method="post" action="<?php echo url('view/process_remove.php'); ?>">
@@ -44,8 +44,7 @@ if (isLogged()) {
                 </form>
             </div>
         </div>
-        <?php
-
+    <?php
     }
 }
 ?>
@@ -106,7 +105,7 @@ if (isLogged()) {
             <form method="post" action="<?php echo url('view/process_comment.php'); ?>">
                 <input type="hidden" name="article_id" value="<?php echo $article->getId(); ?>">
                 <div class="blockMember">
-                    <textarea name="content" placeholder="Votre commentaire" required></textarea>
+                    <textarea name="content" rows="6" cols="50" placeholder="Votre commentaire" required></textarea>
                 </div>
                 <div class="blockMember">
                     <input type="submit" value="Commenter">

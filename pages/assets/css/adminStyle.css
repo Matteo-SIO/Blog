@@ -1,0 +1,25 @@
+.adminBlock {
+    text-align: center;
+    margin: 1% 30%;
+    padding: 1% 4%;
+}
+
+#adminRoles-block {
+    background: palevioletred;
+}
+
+#adminRolesCreate-block {
+    padding-top: 1%;
+}
+
+#adminUsers-block {
+    background: aquamarine;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: #1a0dab;
+    text-decoration: underline;
+    cursor: pointer;
+}
